@@ -1,0 +1,32 @@
+/*
+   A->1, B->2, C->3........AA->27,AB->28.......ZY->701(26*26 + 25),ZY->702(26*26 + 26),AAA->703(26*26 + 26 + 1)
+   In this problem we have to convert the given string into Integer using  the above
+*/
+
+
+import java.uitl.Scanner(System.in);
+import java.lang.*;
+class Solution{
+
+    public static long getColumnInt(String ColStr)
+    {
+        long val = 0;
+        for(int i = 0; i < ColStr.length(); i++)
+        {
+            val = ((val*26) % 100000007 + (ColStr.charAt(i) - 'A' + 1) % 100000007) % 100000007;
+        }
+        return val;
+    }
+    //Driver code
+    public static void main(String[] args)
+    {
+      Scanner sc = new Scanner(System.in);
+      int t = Integer.pasrseInt(sc.nextLine());
+
+      while(t-- > 0)
+      {
+          String ColStr = sc.nextLine();
+          long res = getColumnInt(ColStr);
+      }
+    }
+}
