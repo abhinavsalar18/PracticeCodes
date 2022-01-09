@@ -4,16 +4,16 @@
 */
 
 
-import java.uitl.Scanner(System.in);
+import java.util.Scanner;
 import java.lang.*;
-class Solution{
+class Solution {
 
     public static long getColumnInt(String ColStr)
     {
         long val = 0;
         for(int i = 0; i < ColStr.length(); i++)
         {
-            val = ((val*26) % 100000007 + (ColStr.charAt(i) - 'A' + 1) % 100000007) % 100000007;
+            val = ((val*26) % 1000000007 + (ColStr.charAt(i) - 'A' + 1) % 1000000007) % 1000000007;
         }
         return val;
     }
@@ -21,12 +21,13 @@ class Solution{
     public static void main(String[] args)
     {
       Scanner sc = new Scanner(System.in);
-      int t = Integer.pasrseInt(sc.nextLine());
+      int t = Integer.parseInt(sc.nextLine());
 
       while(t-- > 0)
       {
           String ColStr = sc.nextLine();
           long res = getColumnInt(ColStr);
+          System.out.println(res);
       }
     }
 }
